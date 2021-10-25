@@ -1,12 +1,12 @@
 version: '3.8'
 services:
   service:
-    #restart: always    
+    restart: always    
     build: rtm
     user: root
     deploy:
       mode: replicated
-      replicas: 1    
+      replicas: 1
     #  resources:
     #    limits:
     #      cpus: '0.001'
