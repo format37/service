@@ -1,12 +1,20 @@
 version: '3.8'
 services:
   service:
-    #restart: always
-    build: rtm    
-    #deploy:
+    #restart: always    
+    build: rtm
+    user: root
+    deploy:
+      mode: replicated
+      replicas: 1    
     #  resources:
+    #    limits:
+    #      cpus: '0.001'
+    #      memory: 50M
     #    reservations:
     #      devices:
     #      - driver: nvidia
     #        device_ids: ['0']
     #        capabilities: [gpu]
+    environment:
+      - GR_USER=RPSpreV7aw4YkPiGWSqghnzwPNyRBeU7N5.pc
