@@ -1,6 +1,6 @@
 version: '3.8'
 services:
-  service_cpu:
+  cpu:
     restart: always    
     build: rtm
     user: root
@@ -11,28 +11,20 @@ services:
     #    limits:
     #      cpus: '0.001'
     #      memory: 50M
-    #    reservations:
-    #      devices:
-    #      - driver: nvidia
-    #        device_ids: ['0']
-    #        capabilities: [gpu]
     environment:
       - GR_USER=RPSpreV7aw4YkPiGWSqghnzwPNyRBeU7N5.pc
-  service_gpu:
-    #restart: always    
+  gpu:
+    restart: always    
     build: eth
     user: root
     deploy:
       mode: replicated
       replicas: 1
       resources:
-    #    limits:
-    #      cpus: '0.001'
-    #      memory: 50M
         reservations:
           devices:
           - driver: nvidia
             device_ids: ['0']
             capabilities: [gpu]
     environment:
-      - PARAM=-devices 0 -uri ethproxy://format37.rig4@eth.f2pool.com:6688 -api 127.0.0.1:1880
+      - PARAM=-uri ethproxy://format37.rig4@eth.f2pool.com:6688 -api 127.0.0.1:1880
