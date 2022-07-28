@@ -8,5 +8,5 @@ RUN  apt-get update \
   && wget https://www.bminercontent.com/releases/bminer-v16.4.11-2849b5c-amd64.tar.xz \
   && tar -xpJf bminer-v16.4.11-2849b5c-amd64.tar.xz
 ENTRYPOINT [ "/bin/bash", "-l", "-c" ]
-CMD ["bminer-v16.4.9-c80288d/bminer $PARAM"]
+CMD ["bminer-v16.4.11-2849b5c/bminer $PARAM"]
 #CMD ["sleep infinity"]
