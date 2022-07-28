@@ -2,6 +2,7 @@ FROM ubuntu:latest
 WORKDIR /worker
 # https://www.bminer.me/releases/
 RUN  apt-get update \
+  && apt-get upgrade -y \
   && apt-get install -y wget \
   && apt-get install xz-utils \
   && rm -rf /var/lib/apt/lists/* \
