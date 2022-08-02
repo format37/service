@@ -14,3 +14,7 @@ sudo apt install -y nvidia-docker2
 sudo systemctl daemon-reload
 sudo systemctl restart docker
 ```
+### problem 3
+error while loading shared libraries: libssl.so.1.1
+### slove
+[cryptoprofi](https://www.cryptoprofi.info/?p=8678)
